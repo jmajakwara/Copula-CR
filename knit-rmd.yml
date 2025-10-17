@@ -23,7 +23,11 @@ uses: r-lib/actions/setup-r-dependencies@v2
 with:
   packages: |
   any::rmarkdown
-any::knitr
+  any::knitr
+  any::tidyverse
+  any::tidymodels
+  any::reactable
+  any::htmltools
 # Add other packages used in your .Rmd
 
 - name: Knit Rmd to HTML
@@ -39,4 +43,5 @@ git add report.html
 git commit -m "Auto-knit report.Rmd to HTML" || echo "No changes to commit"
 git push
 env:
+
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
