@@ -1,0 +1,132 @@
+---
+title: "**Overview Table of CR models using Copulas**"
+output:
+  html_document:
+    toc: no
+    css: style.css
+    code_download: true
+    theme: simplex
+    highlight: pygments
+    toc_float:
+      collapsed: no
+    self_contained: false
+link-citations: yes
+classoption: fleqn
+#runtime: shiny
+fontsize: 11pt
+header-includes:
+- \usepackage{amsmath,url,hyperref,amsthm,amssymb}
+- \usepackage{float} \floatplacement{figure}{H}
+- \setlength{\headsep}{0.2in}
+- \sloppy
+linestretch: 0.9
+---
+
+<style>
+body {
+text-align: justify}
+</style>
+
+```{r setup, include=FALSE}
+library(styler)
+library(pander)
+library(tidyverse)
+
+
+knitr::opts_chunk$set(echo=FALSE,eval=TRUE,warning=FALSE,message=FALSE,prompt=TRUE,strip.white=TRUE,
+cache=FALSE,size='tiny',comment='',fig.width=8,fig.height=4.5,options(width = 70))
+```
+
+## Introduction
+
+This table has been created as part of the manuscript: **Competing risk models using copulas: A comprehensive review** with the aim of consolidating articles that has covered CR models using copulas. The provision of open-source and well-documented software is essential to ensure the widespread adoption of new statistical methods. Reproducibility is crucial in the development and evaluation of new methods. The table provides such details, and was constructed using R package: *reactable* (Lin, 2023).
+
+## Explanation of the table columns
+Explanation of table column names:
+
++ **title** title of the paper
++ **truncation** type of truncation
++ **censoring** type of censoring
++ **model** type of marginal survival functions used; `ML` - Machine learning, `non` - non-parametric, `par` - parametric model.
++ **field** Field of study `survival`, `meta analysis` or `reliability`
++ **type** copula type, including `Arch` - Archimidean, `H Arch` - hierarchical Acrhimidean, `Gaus` - Gaussian, `FGM` - Farlie–Gumbel–Morgenstern, Frank, `AMH` - Ali-Mikhail-Haq.
++ **covariates** whether covariates are used or not
++ **code** availability of code used to generate results
++ **authors** name of author(s) (hidden)
++ **year** year the article was published (hidden)
++ **paper** link to the paper (hidden)
++ **dataset** Whether real dataset(s) were utilised (hidden)
++ **simulation** Whether simulation study was utilised (hidden)
++ **CR type** type of CR: `CR` - for latent CR type; `CR-observ` - Observable quantities type of CR; `semi-CR` - latent type CR in which a non-terminal event ca be censored by a terminal event, and `Cens` - dependent censoring type of analysis.
+
+## Table of reviewed articles
+```{r}
+library(reactable)
+library(htmltools)
+
+data <- read.csv2("table.csv", header = TRUE, sep = ";")
+
+# Create a reactable table
+htmltools::browsable(
+  tagList(
+    tags$button(
+      "Show/hide more columns",
+      onclick = "Reactable.setHiddenColumns('cr-table', prevColumns => {
+        return prevColumns.length === 0 ? ['type_covariates', 'paper', 'datasets', 'authors', 'CR type'] : []
+    })"
+),
+reactable(
+  data,
+  filterable = TRUE,
+  resizable = TRUE,
+  bordered = TRUE,
+  highlight = TRUE,
+  striped = TRUE,
+  compact = TRUE,
+  wrap = FALSE,
+  selection = "multiple", 
+  onClick = "expand",
+  searchable = TRUE,
+  showSortable = TRUE,
+  pageSizeOptions = c(5,10,20,30),
+ # rownames = TRUE,
+  pagination = TRUE,
+  defaultPageSize = 10,
+  showPageSizeOptions = TRUE,
+  paginationType = "jump",
+  columns = list(
+    title = colDef(name = "Title",cell = function(value, index) {
+    # Render as a link
+    url <- data[index,"paper"]
+    htmltools::tags$a(href = url, target = "_blank",data[index,"title"])
+  }, minWidth = 300, sticky = "left"),
+    truncation = colDef(name = "Truncation", show = FALSE),
+    censoring = colDef(name = "Censoring"),
+    model = colDef(name = "Model", minWidth = 70),
+    field = colDef(name = "Field", minWidth = 65),
+    type = colDef(name = "Type"),
+    type_covariates = colDef(name = "Covariates", show = FALSE, cell = function(value) {
+    if (value == "no") "\u274c no" else "\u2714\ufe0f yes"}),
+    code = colDef(name = "Code",cell = function(value, index) {
+        if (value == "no") {
+          "\u274c not accessible"
+        } else {
+          url <- data[index, "code"]
+          htmltools::tags$a(href = url, target = "_blank", data[index, "code"])
+        }
+      }),
+    authors = colDef(name = "Authors",show = FALSE),
+    year = colDef(name = "Year", minWidth = 55),
+    paper = colDef(name = "Paper",cell = function(value, index) {
+    url <- data[index,"paper"]
+    htmltools::tags$a(href = url, target = "_blank",data[index,"paper"])},show = FALSE),
+    datasets = colDef(name = "Datsets", minWidth = 80, cell = function(value) {
+    if (value == "no") "\u274c no" else "\u2714\ufe0f yes"}),
+    CR_type = colDef(name = "CR type",show = FALSE),
+    simulation = colDef(name = "Simulation",cell = function(value) {
+    if (value == "no") "\u274c no" else "\u2714\ufe0f yes"},show = FALSE)
+  ),
+      elementId = "cr-table"
+)
+))
+```
