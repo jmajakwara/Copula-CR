@@ -9,7 +9,7 @@ output:
     highlight: pygments
     toc_float:
       collapsed: no
-    self_contained: false
+    self_contained: true
 link-citations: yes
 classoption: fleqn
 #runtime: shiny
@@ -130,3 +130,4 @@ reactable(
 )
 ))
 ```
+
