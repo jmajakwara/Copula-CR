@@ -24,6 +24,8 @@ jobs:
         packages: |
           any::rmarkdown
           any::knitr
+          any::styler
+          any::pander
           any::tidyverse
           any::tidymodels
           any::reactable
@@ -42,4 +44,5 @@ jobs:
         git commit -m "Auto-knit CR_Copulas.Rmd to HTML" || echo "No changes to commit"
         git push
       env:
+
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
