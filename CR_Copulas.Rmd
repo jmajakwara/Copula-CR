@@ -64,7 +64,7 @@ Explanation of table column names:
 library(reactable)
 library(htmltools)
 
-data <- read.csv2("table.csv", header = TRUE, sep = ";")
+data <- read.csv2("./table.csv", header = TRUE, sep = ";")
 
 # Create a reactable table
 htmltools::browsable(
