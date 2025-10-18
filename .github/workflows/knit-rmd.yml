@@ -1,4 +1,4 @@
-name: Knit R Markdown
+name: Knit R Markdown and Deploy to GitHub Pages
 
 on:
   push:
@@ -6,43 +6,55 @@ on:
       - main
 
 jobs:
-  knit:
+  knit-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+      # Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-    - name: Set up R
-      uses: r-lib/actions/setup-r@v2
-      with:
-        r-version: '4.4.3' # Specify R version
+      # Set up R
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.4.3' # Specified R version
 
-    - name: Install R Dependencies
-      uses: r-lib/actions/setup-r-dependencies@v2
-      with:
-        packages: |
-          any::rmarkdown
-          any::knitr
-          any::styler
-          any::pander
-          any::tidyverse
-          any::tidymodels
-          any::reactable
-          any::htmltools
+      # Install R Dependencies
+      - name: Install R Dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::rmarkdown
+            any::knitr
+            any::styler
+            any::pander
+            any::tidyverse
+            any::tidymodels
+            any::reactable
+            any::htmltools
 
-    - name: Knit Rmd to HTML
-      run: |
-        Rscript -e "rmarkdown::render('CR_Copulas.Rmd', output_file = 'CR_Copulas.html')"
-      shell: bash
+      # Create docs/ directory if it doesn't exist
+      - name: Create Output Directory
+        run: mkdir -p docs
 
-    - name: Commit Rendered Output
-      run: |
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        git add CR_Copulas.html
-        git commit -m "Auto-knit CR_Copulas.Rmd to HTML" || echo "No changes to commit"
-        git push
-      env:
+      # Knit Rmd to HTML
+      - name: Knit Rmd to HTML
+        run: |
+          Rscript -e "rmarkdown::render('CR_Copulas.Rmd', output_dir = 'docs')"
+        shell: bash
 
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Copy style.css to docs/
+      - name: Copy CSS
+        run: |
+          cp style.css docs/
+        shell: bash
+        continue-on-error: true # Continue if style.css is missing to avoid workflow failure
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: main
+          keep_files: true # Preserve existing files in docs/
