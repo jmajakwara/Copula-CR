@@ -59,7 +59,7 @@ Explanation of table column names:
 + **simulation** Whether simulation study was utilised (hidden)
 + **CR type** type of CR: `CR` - for latent CR type; `CR-observ` - Observable quantities type of CR; `semi-CR` - latent type CR in which a non-terminal event ca be censored by a terminal event, and `Cens` - dependent censoring type of analysis.
 
-\noindent \textbf{Note:} **Visible** columns are displayed in the interactive table interface. **Hidden** columns are not displayed by default. Columns can be filtered, arranged in ascending/descending order. Entries can be searching in the interactive table. The table contains 181 articles on competing risks models using copulas.
+\noindent \textbf{Note:} **Visible** columns are displayed in the interactive table interface. **Hidden** columns are not displayed by default. Columns can be filtered, arranged in ascending/descending order. Entries can be searched in the interactive table and it contains 181 articles on competing risks models using copulas.
 
 ## Table of reviewed articles
 ```{r}
@@ -152,6 +152,7 @@ reactable(
 )
 ))
 ```
+
 
 
 
