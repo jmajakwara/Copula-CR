@@ -178,6 +178,21 @@ Shih JH - Albert PS - Mendola P and Grantz KL;2015;Modelling the Type and Timing
 Liu B - Shi Y - Ng HK and Shang X;2021;Nonparametric Bayesian Realiability analysis of masked data with dependent competing risks;https://doi.org/10.1016/j.ress.2021.107502;non;;right;Realiability;Arch;cont;no;yes;yes;CR
 Yang Z - Li X - Chen C - Zhao H - Yang D - GuoJ and Luo W;2019;Reliability assessment of the spindle systems with a competing risk model;https://doi.org/10.1177/1748006X18770343;par;;right;Reliability;Gumbel;cont;no;yes;no;CR
 Said M - Ghazzali N and Rivest LP;2007;Score tests for independence in parametric competing risks models;https://doi.org/10.1007/s11749-006-0019-5;par;;right;Survival;Arch;cont;no;yes;yes;CR
+Kim KJ - Jong-Min Kim - Il Do Ha;2025;Copula-Based Deep Learning Models for Competing Risks;https://doi.org/10.1002/sam.70051;Deep Learning;;right;Survival;C, F,Gau;yes;https://github.com/kjonomi/Rcode/blob/main/SAM;both;yes;CR
+Liu X;2025;HACSurv: A Hierarchical Copula-Based Approach for Survival Analysis with Dependent Competing Risks;https://proceedings.mlr.press/v258/liu25h.html;parametric;;right;Survival;Archimedean;yes;no;both;yes;CR
+Yu T - et al.;2025;Exploring Causal Effects of Hormone- and Radio-Treatments in an Observational Study of Breast Cancer Using Copula-Based Semi-Competing Risks Models;https://doi.org/10.1002/sim.70131;semi-parametric;;right;Survival;Copula;yes;no;real data;yes;semi-CR
+Strömer A - Klein N - Van Keilegom I - Mayr A;2025;Modelling dependent censoring in time-to-event data using boosting copula regression;https://doi.org/10.1007/s10985-025-09674-x;parametric;;right;Survival;Clayton, Gumbel, Gaussian;yes;https://github.com/AnnikaStr/CopBoostDepCens;both;yes;Cens
+Rong R;2025;Regression Modeling of Cumulative Incidence Function for Left-Truncated Right-Censored Competing Risks Data: A Modified Pseudo-observation Approach;https://doi.org/10.1080/03610926.2025.2458183;Modified Pseudo-observation;left;right;Survival;Copula;yes;no;both;yes;CR
+Hakamipour N;2025;Copula for Dependent Competing Risks Model in Progressive-Stress Accelerated Life Tests;https://doi.org/10.1002/qre.3811;par;;accelerated;Reliability;Copula;no;no;both;yes;dependent CR
+Chand G;2025;Availability Modeling of Competing Risk System with Multiple Failure Modes Incorporating Hybrid Hazard Rate Model;https://doi.org/10.1142/S0218539324500402;par;;right;Reliability;Copula;no;no;simulation;yes;multiple CR
+Rahman MM;2025;PyTMLE: A Flexible Python Library for Targeted Estimation of Survival and Competing Risks using Causal Machine Learning;https://www.medrxiv.org/content/10.1101/2025.07.02.25330730v1;semi;;right;Survival;Copula;yes;yes (Python library);both;yes;CR
+Zhang C;2025;Resilience-based complex system early design using dynamic Copula Bayesian network: Heave compensation hydraulic system design as a case study;https://doi.org/10.1016/j.oceaneng.2025.120029;Bayesian;;right;Reliability;Copula Bayesian network;no;no;both;yes;CR
+Das R;2025;Optimal Designs and Reliability Acceptance Sampling Plans for Accelerated Copula-Based Dependent Competing Risks Model;https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LPWFZrgAAAAJ&citation_for_view=LPWFZrgAAAAJ:UeHWp8X0CEIC;par;;right;Reliability;Copula;no;no;simulation;yes;dependent CR
+Anonymous;2026;Competing Risk Analysis in Cardiovascular Outcome Trials: A Simulation Comparison of Cox and Fine-Gray Models;https://doi.org/10.48550/arXiv.2602.16031;simulation;;non-CV death;Survival;bivariate copula;no;no;simulation;yes;CR
+Anonymous;2026;Identifying candidate secondary endpoints in semi-competing risk time-to-event data using an integrated analytical framework;https://link.springer.com/article/10.1007/s00362-026-01816-z;par;;right;Survival;Frank;yes;no;both;yes;semi-CR
+Anonymous;2026;Competing risks regression for clustered data with covariate-dependent censoring;https://pubmed.ncbi.nlm.nih.gov/39790905;marginal stratified PSH;;right;Survival;Copula;yes;no;both;yes;dependent CR
+Beutner E;2026;The Functional Delta Method for Deriving Asymptotic Distributions;https://wires.onlinelibrary.wiley.com/doi/pdf/10.1002/wics.70053;functional delta;;right;Survival;Copula;no;no;simulation;no;dependent CR
+
 
 
 
