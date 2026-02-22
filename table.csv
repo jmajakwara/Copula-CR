@@ -178,7 +178,6 @@ Shih JH - Albert PS - Mendola P and Grantz KL;2015;Modelling the Type and Timing
 Liu B - Shi Y - Ng HK and Shang X;2021;Nonparametric Bayesian Realiability analysis of masked data with dependent competing risks;https://doi.org/10.1016/j.ress.2021.107502;non;;right;Realiability;Arch;cont;no;yes;yes;CR
 Yang Z - Li X - Chen C - Zhao H - Yang D - GuoJ and Luo W;2019;Reliability assessment of the spindle systems with a competing risk model;https://doi.org/10.1177/1748006X18770343;par;;right;Reliability;Gumbel;cont;no;yes;no;CR
 Said M - Ghazzali N and Rivest LP;2007;Score tests for independence in parametric competing risks models;https://doi.org/10.1007/s11749-006-0019-5;par;;right;Survival;Arch;cont;no;yes;yes;CR
-Kim KJ - Jong-Min Kim - Il Do Ha;2025;Copula-Based Deep Learning Models for Competing Risks;https://doi.org/10.1002/sam.70051;Deep Learning;;right;Survival;Clayton, Frank, Gaussian;yes;https://github.com/kjonomi/Rcode/blob/main/SAM;both;yes;CR
 Liu X;2025;HACSurv: A Hierarchical Copula-Based Approach for Survival Analysis with Dependent Competing Risks;https://proceedings.mlr.press/v258/liu25h.html;parametric;;right;Survival;Archimedean;yes;no;both;yes;CR
 Yu T - et al.;2025;Exploring Causal Effects of Hormone- and Radio-Treatments in an Observational Study of Breast Cancer Using Copula-Based Semi-Competing Risks Models;https://doi.org/10.1002/sim.70131;semi-parametric;;right;Survival;Copula;yes;no;real data;yes;semi-CR
 Strömer A - Klein N - Van Keilegom I - Mayr A;2025;Modelling dependent censoring in time-to-event data using boosting copula regression;https://doi.org/10.1007/s10985-025-09674-x;parametric;;right;Survival;Clayton, Gumbel, Gaussian;yes;https://github.com/AnnikaStr/CopBoostDepCens;both;yes;Cens
@@ -192,6 +191,7 @@ Anonymous;2026;Competing Risk Analysis in Cardiovascular Outcome Trials: A Simul
 Anonymous;2026;Identifying candidate secondary endpoints in semi-competing risk time-to-event data using an integrated analytical framework;https://link.springer.com/article/10.1007/s00362-026-01816-z;par;;right;Survival;Frank;yes;no;both;yes;semi-CR
 Anonymous;2026;Competing risks regression for clustered data with covariate-dependent censoring;https://pubmed.ncbi.nlm.nih.gov/39790905;marginal stratified PSH;;right;Survival;Copula;yes;no;both;yes;dependent CR
 Beutner E;2026;The Functional Delta Method for Deriving Asymptotic Distributions;https://wires.onlinelibrary.wiley.com/doi/pdf/10.1002/wics.70053;functional delta;;right;Survival;Copula;no;no;simulation;no;dependent CR
+
 
 
 
