@@ -48,7 +48,7 @@ The interactive table columns have the following interpretation:
 + **Title** title of the article
 + **Truncation** type of truncation
 + **Censoring** type of censoring
-+ **Estimation** type of estimation, `ML` - maximum likelihood, `CG` - copula graphics, `Bayesian`, `Cox` - Cox regression
++ **Estimation** type of estimation, `ML` - Maximum likelihood, `CG` - Copula graphics, `Bayesian`, `Cox` - Cox regression or `ML` - Machine learning
 + **Domain** Field of study `Survival`, `Actuarial`, `Econometrics`, `Social sciences`, `Hydrology`, `Reliability`, or `Others`
 + **Copula_type** copula type, including `Arch` - if Archimidean is used in general,  `Gaus` - Gaussian, `FGM` - Farlie–Gumbel–Morgenstern,  `AMH` - Ali-Mikhail-Haq, `Symm` - Symmetric copulas
 + **Covariates** whether covariates are used or not
@@ -63,6 +63,7 @@ The interactive table columns have the following interpretation:
 \noindent \textbf{Note:} **Visible** columns are displayed in the interactive table interface. **Hidden** columns are not displayed by default. Columns can be filtered, arranged in ascending/descending order. Entries can be searched in the interactive table and it contains 188 articles on competing risks models using copulas.
 
 ## Table of reviewed articles
+
 ```{r}
 library(reactable)
 library(htmltools)
@@ -133,6 +134,7 @@ reactable(
 )
 ))
 ```
+
 
 
 
