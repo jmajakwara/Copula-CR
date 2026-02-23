@@ -44,20 +44,19 @@ This table has been created as part of the manuscript: **Competing risk models u
 ## Explanation of the table columns
 Explanation of table columns:
 
-+ **Author(s)** author(s) of the article
-+ **title** title of the article
-+ **truncation** type of truncation
-+ **censoring** type of censoring
-+ **estimation** type of estimation use, `ML` - maximum likelihood, `CG` - copula graphics, `Bayesian`, `Cox` - Cox regression
-+ **domain** Field of study `Survival`, `Actuarial`, `Econometrics`, `Social sciences`, `Hydrology`, `Reliability`, or `Others`
++ **Title** title of the article
++ **Truncation** type of truncation
++ **Censoring** type of censoring
++ **Estimation** type of estimation use, `ML` - maximum likelihood, `CG` - copula graphics, `Bayesian`, `Cox` - Cox regression
++ **Domain** Field of study `Survival`, `Actuarial`, `Econometrics`, `Social sciences`, `Hydrology`, `Reliability`, or `Others`
 + **Copula_type** copula type, including `Arch` - if Archimidean is used in general,  `Gaus` - Gaussian, `FGM` - Farlie–Gumbel–Morgenstern,  `AMH` - Ali-Mikhail-Haq, `Symm` - Symmetric copulas
-+ **covariates** whether covariates are used or not
-+ **code** availability of code used to generate results
-+ **authors** name of author(s) (hidden)
-+ **year** year the article was published (hidden)
-+ **paper url** link to the paper (hidden)
-+ **dataset** Whether real dataset(s) were utilised (hidden)
-+ **simulation** Whether simulation study was utilised (hidden)
++ **Covariates** whether covariates are used or not
++ **Code** availability of code used to generate results
++ **Author(s)** name of author(s) (hidden)
++ **Year** year the article was published (hidden)
++ **Paper url** link to the paper (hidden)
++ **Dataset** Whether real dataset(s) were utilised (hidden)
++ **Simulation** Whether simulation study was utilised (hidden)
 + **CR type** type of CR: `CR` - for latent CR type; `CR-Obs` - Observable quantities type of CR; `semi-CR` - latent type CR in which a non-terminal event ca be censored by a terminal event, and `Cens` - dependent censoring type.
 
 \noindent \textbf{Note:} **Visible** columns are displayed in the interactive table interface. **Hidden** columns are not displayed by default. Columns can be filtered, arranged in ascending/descending order. Entries can be searched in the interactive table and it contains 181 articles on competing risks models using copulas.
@@ -125,9 +124,9 @@ reactable(
   }, minWidth = 300, sticky = "left"),
     truncation = colDef(name = "Truncation", show = FALSE),
     censoring = colDef(name = "Censoring"),
-    model = colDef(name = "Model", minWidth = 70),
-    field = colDef(name = "Field", minWidth = 65),
-    type = colDef(name = "Type"),
+    model = colDef(name = "Estimation", minWidth = 70),
+    field = colDef(name = "Domain", minWidth = 65),
+    type = colDef(name = "Copula_ype"),
     type_covariates = colDef(name = "Covariates", show = FALSE, cell = function(value) {
     if (value == "no") "\u274c no" else "\u2714\ufe0f yes"}),
     code = colDef(name = "Code",cell = function(value, index) {
@@ -138,9 +137,9 @@ reactable(
           htmltools::tags$a(href = url, target = "_blank", data[index, "code"])
         }
       }),
-    authors = colDef(name = "Authors",show = FALSE),
+    authors = colDef(name = "Author(s)",show = FALSE),
     year = colDef(name = "Year", minWidth = 55),
-    paper = colDef(name = "Paper",cell = function(value, index) {
+    paper = colDef(name = "Paper url",cell = function(value, index) {
     url <- data[index,"paper"]
     htmltools::tags$a(href = url, target = "_blank",data[index,"paper"])},show = FALSE),
     datasets = colDef(name = "Datasets", minWidth = 80, cell = function(value) {
@@ -153,3 +152,4 @@ reactable(
 )
 ))
 ```
+
