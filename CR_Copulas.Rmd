@@ -71,19 +71,19 @@ data <- read.csv2("./table.csv", header = TRUE, sep = ";")
 
 # Add new papers published after June 30, 2024
 new_rows <- data.frame(
-  Authors = c("Gelis-Cadena K, Daniels M, Siddique J", "Crommen G, Deresa NW, D’Haen M, Ding J, Willems I, Van Keilegom I"),
-  Year = c(2025, 2025),
-  Title = c("A Bayesian Nonparametric Approach for Semi-Competing Risks with Application to Cardiovascular Health", "Recent advances in copula-based methods for dependent censoring"),
-  Paper_url = c("https://arxiv.org/pdf/2506.20860", "https://www.idescat.cat/sort/sort491/49.1.1.Crommen-etal.pdf"),
-  Estimation = c("CG", "several"),
-  Truncation = c("", "left"),
-  Censoring = c("right", "right"),
-  Domain = c("Survival", "Survival"),
-  Copula_type = c("D-vine Gaussian", "Arch Gaussian"),
-  Covariates = c("yes", "yes"),
-  Code = c("no", "yes"),
-  Datasets = c("yes", "yes"),
-  Simulation = c("no", "yes"),
+  authors = c("Gelis-Cadena K, Daniels M, Siddique J", "Crommen G, Deresa NW, D’Haen M, Ding J, Willems I, Van Keilegom I"),
+  year = c(2025, 2025),
+  title = c("A Bayesian Nonparametric Approach for Semi-Competing Risks with Application to Cardiovascular Health", "Recent advances in copula-based methods for dependent censoring"),
+  paper = c("https://arxiv.org/pdf/2506.20860", "https://www.idescat.cat/sort/sort491/49.1.1.Crommen-etal.pdf"),
+  model = c("non", "several"),
+  truncation = c("", "left"),
+  censoring = c("right", "right"),
+  field = c("Survival", "Survival"),
+  type = c("D-vine Gaussian", "Arch Gaussian"),
+  type_covariates = c("yes", "yes"),
+  code = c("no", "yes"),
+  datasets = c("yes", "yes"),
+  simulation = c("no", "yes"),
   CR_type = c("semi-CR", "Cens")
 )
 
@@ -95,7 +95,7 @@ htmltools::browsable(
     tags$button(
       "Show/hide more columns",
       onclick = "Reactable.setHiddenColumns('cr-table', prevColumns => {
-        return prevColumns.length === 0 ? ['Covariates', 'Paper_url', 'Datasets', 'Authors', 'CR_type'] : []
+        return prevColumns.length === 0 ? ['type_covariates', 'paper', 'datasets', 'authors', 'CR_type'] : []
     })"
 ),
 reactable(
@@ -118,49 +118,38 @@ reactable(
   showPageSizeOptions = TRUE,
   paginationType = "jump",
   columns = list(
-    Title = colDef(name = "Title",cell = function(value, index) {
+    title = colDef(name = "Title",cell = function(value, index) {
     # Render as a link
-    url <- data[index,"Paper_url"]
-    htmltools::tags$a(href = url, target = "_blank",data[index,"Title"])
+    url <- data[index,"paper"]
+    htmltools::tags$a(href = url, target = "_blank",data[index,"title"])
   }, minWidth = 300, sticky = "left"),
-    Truncation = colDef(name = "Truncation", show = FALSE),
-    Censoring = colDef(name = "Censoring"),
-    Estimation = colDef(name = "Estimation", minWidth = 70),
-    Domain = colDef(name = "Domain", minWidth = 65),
-    Copula_type = colDef(name = "Copula_type"),
-    Covariates = colDef(name = "Covariates", show = FALSE, cell = function(value) {
+    truncation = colDef(name = "Truncation", show = FALSE),
+    censoring = colDef(name = "Censoring"),
+    model = colDef(name = "Model", minWidth = 70),
+    field = colDef(name = "Field", minWidth = 65),
+    type = colDef(name = "Type"),
+    type_covariates = colDef(name = "Covariates", show = FALSE, cell = function(value) {
     if (value == "no") "\u274c no" else "\u2714\ufe0f yes"}),
-    Code = colDef(name = "Code",cell = function(value, index) {
+    code = colDef(name = "Code",cell = function(value, index) {
         if (value == "no") {
           "\u274c not accessible"
         } else {
-          url <- data[index, "Code"]
-          htmltools::tags$a(href = url, target = "_blank", data[index, "Code"])
+          url <- data[index, "code"]
+          htmltools::tags$a(href = url, target = "_blank", data[index, "code"])
         }
       }),
-    Authors = colDef(name = "Authors",show = FALSE),
-    Year = colDef(name = "Year", minWidth = 55),
-    Paper_url = colDef(name = "Paper_url",cell = function(value, index) {
+    authors = colDef(name = "Authors",show = FALSE),
+    year = colDef(name = "Year", minWidth = 55),
+    paper = colDef(name = "Paper",cell = function(value, index) {
     url <- data[index,"paper"]
-    htmltools::tags$a(href = url, target = "_blank",data[index,"Paper_url"])},show = FALSE),
-    Datasets = colDef(name = "Datasets", minWidth = 80, cell = function(value) {
+    htmltools::tags$a(href = url, target = "_blank",data[index,"paper"])},show = FALSE),
+    datasets = colDef(name = "Datasets", minWidth = 80, cell = function(value) {
     if (value == "no") "\u274c no" else "\u2714\ufe0f yes"}),
-    CR_type = colDef(name = "CR_type",show = FALSE),
-    Simulation = colDef(name = "Simulation",cell = function(value) {
+    CR_type = colDef(name = "CR type",show = FALSE),
+    simulation = colDef(name = "Simulation",cell = function(value) {
     if (value == "no") "\u274c no" else "\u2714\ufe0f yes"},show = FALSE)
   ),
       elementId = "cr-table"
 )
 ))
 ```
-
-
-
-
-
-
-
-
-
-
-
