@@ -185,8 +185,9 @@ Liu X;2025;HACSurv: A Hierarchical Copula-Based Approach for Survival Analysis w
 Yu T, et al.;2025;Exploring Causal Effects of Hormone- and Radio-Treatments in an Observational Study of Breast Cancer Using Copula-Based Semi-Competing Risks Models;https://doi.org/10.1002/sim.70131;semi-parametric;;right;Survival;Copula;yes;no;real data;yes;semi-CR
 Rong R;2025;Regression Modeling of Cumulative Incidence Function for Left-Truncated Right-Censored Competing Risks Data: A Modified Pseudo-observation Approach;https://doi.org/10.1080/03610926.2025.2458183;Modified Pseudo-observation;left;right;Survival;Copula;yes;no;both;yes;CR
 Hakamipour N;2025;Copula for Dependent Competing Risks Model in Progressive-Stress Accelerated Life Tests;https://doi.org/10.1002/qre.3811;par;;accelerated;Reliability;Copula;no;no;both;yes;dependent CR
-Anonymous;2026;Identifying candidate secondary endpoints in semi-competing risk time-to-event data using an integrated analytical framework;https://link.springer.com/article/10.1007/s00362-026-01816-z;par;;right;Survival;Frank;yes;no;both;yes;semi-CR
-Anonymous;2026;Competing risks regression for clustered data with covariate-dependent censoring;https://pubmed.ncbi.nlm.nih.gov/39790905;marginal stratified PSH;;right;Survival;Copula;yes;no;both;yes;dependent CR
+bhipsa Tripathy, Gajendra K. Vishwakarma and Atanu Bhattacharjee ;2026;Identifying candidate secondary endpoints in semi-competing risk time-to-event data using an integrated analytical framework;https://link.springer.com/article/10.1007/s00362-026-01816-z;par;;right;Survival;Frank;yes;no;both;yes;semi-CR
+Manoj Khanal 1, Soyoung Kim 1, Xi Fang 1 and Kwang Woo Ahn;2026;Competing risks regression for clustered data with covariate-dependent censoring;https://pubmed.ncbi.nlm.nih.gov/39790905;marginal stratified PSH;;right;Survival;Copula;yes;no;both;yes;dependent CR
+
 
 
 
