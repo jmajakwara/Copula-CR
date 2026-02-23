@@ -43,7 +43,8 @@ This table has been created as part of the manuscript: **Competing risk models u
 
 ## Explanation of the table columns
 
-+ ** Author(s)** author(s) of the article
+Explanation of table columns:
++ **Author(s)** author(s) of the article
 + **title** title of the article
 + **truncation** type of truncation
 + **censoring** type of censoring
@@ -152,6 +153,7 @@ reactable(
 )
 ))
 ```
+
 
 
 
