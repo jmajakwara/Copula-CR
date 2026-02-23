@@ -42,15 +42,13 @@ cache=FALSE,size='tiny',comment='',fig.width=8,fig.height=4.5,options(width = 70
 This table has been created as part of the manuscript: **Competing risk models using copulas: A comprehensive review** with the aim of consolidating articles that has covered CR models using copulas. The provision of open-source and well-documented software is essential to ensure the widespread adoption of new statistical methods. Reproducibility is crucial in the development and evaluation of new methods. The table provides such details, and was constructed using R package: *reactable* (Lin, 2023).
 
 ## Explanation of the table columns
-Explanation of table column names:
-
 + ** Author(s)** author(s) of the article
 + **title** title of the article
 + **truncation** type of truncation
 + **censoring** type of censoring
 + **Estimation** type of estimation use, `ML` - maximum likelihood, `CG` - copula graphics, `Bayesian`, `Cox` - Cox regression.
 + **Domain** Field of study `Survival`, `Actuarial`, `Econometrics`, `Social sciences`, `Hydrology`, `Reliability`, or `Others`
-+ **Copula_type** copula type, including `Arch` - if Archimidean is used in general,  `Gaus` - Gaussian, `FGM` - Farlie–Gumbel–Morgenstern,  `AMH` - Ali-Mikhail-Haq.
++ **Copula_type** copula type, including `Arch` - if Archimidean is used in general,  `Gaus` - Gaussian, `FGM` - Farlie–Gumbel–Morgenstern,  `AMH` - Ali-Mikhail-Haq, `Symm` - Symmetric copulas.
 + **covariates** whether covariates are used or not
 + **code** availability of code used to generate results
 + **authors** name of author(s) (hidden)
@@ -153,6 +151,7 @@ reactable(
 )
 ))
 ```
+
 
 
 
