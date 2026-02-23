@@ -130,7 +130,7 @@ reactable(
     Copula_type = colDef(name = "Copula_type"),
     Covariates = colDef(name = "Covariates", show = FALSE, cell = function(value) {
     if (value == "no") "\u274c no" else "\u2714\ufe0f yes"}),
-    code = colDef(name = "Code",cell = function(value, index) {
+    Code = colDef(name = "Code",cell = function(value, index) {
         if (value == "no") {
           "\u274c not accessible"
         } else {
@@ -153,6 +153,7 @@ reactable(
 )
 ))
 ```
+
 
 
 
