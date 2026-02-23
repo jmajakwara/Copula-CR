@@ -1,5 +1,5 @@
 ---
-title: "**Overview Table of CR models using Copulas**"
+title: "**Overview Table of Competing Risk models using Copulas**"
 output:
   html_document:
     toc: no
@@ -39,15 +39,16 @@ cache=FALSE,size='tiny',comment='',fig.width=8,fig.height=4.5,options(width = 70
 
 ## Introduction
 
-This table has been created as part of the manuscript: **Competing risk models using copulas: A comprehensive review** with the aim of consolidating articles that has covered CR models using copulas. The table provides such details, and was constructed using R package: *reactable* (Lin, 2023).
+This table has been created as part of the manuscript: **Competing risk models using copulas: A comprehensive review** with the aim of consolidating articles that has covered CR models using copulas. The table provides such details, and was constructed using \texttt{R} package: *reactable* (Lin, 2023).
 
 ## Explanation of the table columns
-Explanation of table columns:
+
+The interactive table columns have the following interpretation:
 
 + **Title** title of the article
 + **Truncation** type of truncation
 + **Censoring** type of censoring
-+ **Estimation** type of estimation use, `ML` - maximum likelihood, `CG` - copula graphics, `Bayesian`, `Cox` - Cox regression
++ **Estimation** type of estimation, `ML` - maximum likelihood, `CG` - copula graphics, `Bayesian`, `Cox` - Cox regression
 + **Domain** Field of study `Survival`, `Actuarial`, `Econometrics`, `Social sciences`, `Hydrology`, `Reliability`, or `Others`
 + **Copula_type** copula type, including `Arch` - if Archimidean is used in general,  `Gaus` - Gaussian, `FGM` - Farlie–Gumbel–Morgenstern,  `AMH` - Ali-Mikhail-Haq, `Symm` - Symmetric copulas
 + **Covariates** whether covariates are used or not
@@ -132,5 +133,6 @@ reactable(
 )
 ))
 ```
+
 
 
