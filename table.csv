@@ -8,7 +8,7 @@ Salem;2023;Bayesian Analysis for Dependent Progressively Censored Weibull Compet
 Zheng M - Klein JP;1994;A self-consistent estimator of marginal survival functions based on dependent competing risk data and an assumed copula;https://doi.org/10.1080/03610929408831387;Self-cnonsistent;;right;Survival;Arch;no;no;both;yes;CR
 Zheng M and Klein JP;1995;Estimates of marginal Survival for dependent competing risks based on an assumed copula;https://doi.org/10.1093/biomet/82.1.127;CG;;right;General;Arch;no;no;yes;yes;CR
 Michimae H-Emura T-Miyamoto A and Kishi K;2024;Bayesian parametric estimation based on left-truncated competing risks data under bivariate Clayton copula models;https://doi.org/10.1080/02664763.2024.2315458;Bayesian;left;right;Survival;Clayton;no;no;yes;yes;CR
-Lo SMS and Wilke RA;2010;A copula model for dependent competing risks; https://doi.org/10.1111/j.1467-9876.2009.00695.x;semi;;right;Economics;Arch;yes;no;yes;yes;CR
+Lo SMS and Wilke RA;2010;A copula model for dependent competing risks; https://doi.org/10.1111/j.1467-9876.2009.00695.x;CG;;right;Econometrics;Arch;yes;no;yes;yes;CR
 Salem MM;2022;Bayesian Life Test Acceptance Criteria for Progressively Censored Competing Risks Data Using Copulas;https://doi.org/10.1142/S0218539322500152;Bayesian;;Type II;Reliability;Arch;yes;no;yes;no;CR
 Zhu H-Lang Y -Ning J and Shen Y;2022;Semiparametric copula-based regression modeling of semi-competing risks data;https://doi.org/10.1080/03610926.2021.1881122;semi;;right;Survival;Arch;continuous;no;yes;yes;semi-CR
 Wang AT-Guo Z-Zhang Y and Wu J;2024;The analysis of semi-competing risks data using Archimedean copula models;https://doi.org/10.1111/stan.12311;semi;;right;Survival;Arch;discrete;no;yes;yes;semi-CR
@@ -185,6 +185,7 @@ Rong R;2025;Regression Modeling of Cumulative Incidence Function for Left-Trunca
 Hakamipour N;2025;Copula for Dependent Competing Risks Model in Progressive-Stress Accelerated Life Tests;https://doi.org/10.1002/qre.3811;par;;accelerated;Reliability;Copula;no;no;both;yes;dependent CR
 Anonymous;2026;Identifying candidate secondary endpoints in semi-competing risk time-to-event data using an integrated analytical framework;https://link.springer.com/article/10.1007/s00362-026-01816-z;par;;right;Survival;Frank;yes;no;both;yes;semi-CR
 Anonymous;2026;Competing risks regression for clustered data with covariate-dependent censoring;https://pubmed.ncbi.nlm.nih.gov/39790905;marginal stratified PSH;;right;Survival;Copula;yes;no;both;yes;dependent CR
+
 
 
 
