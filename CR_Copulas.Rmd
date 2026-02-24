@@ -1,5 +1,5 @@
 ---
-title: "**Overview Table of Competing Risk models using Copulas**"
+title: "**Overview Table of Competing Risk models using Copulas: A comprehensive review**"
 output:
   html_document:
     toc: no
@@ -39,7 +39,7 @@ cache=FALSE,size='tiny',comment='',fig.width=8,fig.height=4.5,options(width = 70
 
 ## Introduction
 
-This table has been created as part of the manuscript: **Competing risk models using copulas: A comprehensive review** with the aim of consolidating articles that has covered CR models using copulas. The table provides such details, and was constructed using \texttt{R} package: *reactable* (Lin, 2023).
+This table has been created as part of the manuscript: **Copula-Based Models for Competing Risks: A comprehensive review** with the aim of consolidating articles that has covered CR models using copulas. The table provides such details, and was constructed using \texttt{R} package: *reactable* (Lin, 2023).
 
 ## Explanation of the table columns
 
@@ -134,6 +134,7 @@ reactable(
 )
 ))
 ```
+
 
 
 
