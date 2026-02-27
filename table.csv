@@ -187,6 +187,7 @@ Rong R;2025;Regression Modeling of Cumulative Incidence Function for Left-Trunca
 Hakamipour N;2025;Copula for Dependent Competing Risks Model in Progressive-Stress Accelerated Life Tests;https://doi.org/10.1002/qre.3811;par;;accelerated;Reliability;Copula;no;no;both;yes;dependent CR
 bhipsa Tripathy, Gajendra K. Vishwakarma and Atanu Bhattacharjee ;2026;Identifying candidate secondary endpoints in semi-competing risk time-to-event data using an integrated analytical framework;https://link.springer.com/article/10.1007/s00362-026-01816-z;par;;right;Survival;Frank;yes;no;both;yes;semi-CR
 Manoj Khanal 1, Soyoung Kim 1, Xi Fang 1 and Kwang Woo Ahn;2026;Competing risks regression for clustered data with covariate-dependent censoring;https://pubmed.ncbi.nlm.nih.gov/39790905;marginal stratified PSH;;right;Survival;Copula;yes;no;both;yes;dependent CR
+Adatorwovor R, Latouche A and Fine JP; A nonparametric dependent competing risk method for net survival analysis; https://doi.org/10.1515/ijb-2024-0035;CG;;right;Survival;Clayton, Gumbel, Frank;no;no;yes;yes;Cens
 
 
 
