@@ -1,5 +1,5 @@
 # Copula-CR
-These files are based on an article titled: "Copula-Based Models for Competing Risks: A comprehensive review".
+These files are based on an article titled: "Copula-Based Models for Competing Risks: A Comprehensive Review".
 
 The file https://jmajakwara.github.io/Copula-CR/CR_Copulas.html is an interactive table which lists all the articles used in preparation for writing the manuscript: "Competing risk models using copulas: A comprehensive review".
 
