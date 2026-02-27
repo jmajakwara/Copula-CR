@@ -188,7 +188,8 @@ Hakamipour N;2025;Copula for Dependent Competing Risks Model in Progressive-Stre
 bhipsa Tripathy, Gajendra K. Vishwakarma and Atanu Bhattacharjee ;2026;Identifying candidate secondary endpoints in semi-competing risk time-to-event data using an integrated analytical framework;https://link.springer.com/article/10.1007/s00362-026-01816-z;par;;right;Survival;Frank;yes;no;both;yes;semi-CR
 Manoj Khanal 1, Soyoung Kim 1, Xi Fang 1 and Kwang Woo Ahn;2026;Competing risks regression for clustered data with covariate-dependent censoring;https://pubmed.ncbi.nlm.nih.gov/39790905;marginal stratified PSH;;right;Survival;Copula;yes;no;both;yes;dependent CR
 Adatorwovor R, Latouche A and Fine JP;2026;A nonparametric dependent competing risk method for net survival analysis; https://doi.org/10.1515/ijb-2024-0035;CG;;right;Survival;Clayton, Gumbel, Frank;no;no;yes;yes;Cens
-Tripathy A - Vishwakarma GK - Bhattacharjee A;2026;Identifying candidate secondary endpoints in semi-competing risk time-to-event data using an integrated analytical framework;https://doi.org/10.1007/s00362-026-01816-z;:right:Survival;ML;yes;no;yes;yes;Semi-CR
+Tripathy A - Vishwakarma GK - Bhattacharjee A;2026;Identifying candidate secondary endpoints in semi-competing risk time-to-event data using an integrated analytical framework;https://doi.org/10.1007/s00362-026-01816-z;ML;:right:Survival;Clayton, Gumbel, Frank;yes;no;yes;yes;Semi-CR
+
 
 
 
