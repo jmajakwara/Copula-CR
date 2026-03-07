@@ -1,5 +1,5 @@
 authors;year;title;paper;model;truncation;censoring;field;type;type_covariates;code;datasets;simulation;CR_type
-Emura T, JH Shih, I D Ha and RA Wilke;2020; Comparison of the marginal hazard model and the sub-distribution hazard model for competing risks under an assumed copula;https://doi.org/10.1177/0962280219892295;CG,Cox;;right;Survival;C,G,FGM;yes;no;yes;no;CR_Obs
+Emura T, JH Shih, I D Ha and RA Wilke;2020; Comparison of the marginal hazard model and the sub-distribution hazard model for competing risks under an assumed copula;https://doi.org/10.1177/0962280219892295;CG,Cox;;right;Survival;Clayton,Gumbel,FGM;yes;no;yes;no;CR_Obs
 MichimaeH and Emura T;2022;Likelihood Inference for Copula Models Based on Left-Truncated and Competing Risks Data from Field Studies;https://doi.org/10.3390/math10132163;ML;left;right;Survival;Clayton;no;https://www.mdpi.com/article/10.3390/math10132163/s1;yes;yes;CR
 Wang AT;2023;The identifiability of copula models for dependent competing risks data with exponentially distributed margins;https://doi.org/10.5705/ss.202020.0520;CG;;right;Survival;Clayton;no;no;yes;yes;CR
 Schwarz M, Jongbloed G and Keilegom IV;2013;On the identifiability of copulas in bivariate competing risks models; https://doi.org/10.1002/cjs.11179;Theoretical;;right;General;Arch-Symm;no;no;no;no;Cens
@@ -188,6 +188,7 @@ Hakamipour N;2025;Copula for Dependent Competing Risks Model in Progressive-Stre
 bhipsa Tripathy, Gajendra K. Vishwakarma and Atanu Bhattacharjee ;2026;Identifying candidate secondary endpoints in semi-competing risk time-to-event data using an integrated analytical framework;https://link.springer.com/article/10.1007/s00362-026-01816-z;par;;right;Survival;Frank;yes;no;both;yes;semi-CR
 Manoj Khanal 1, Soyoung Kim 1, Xi Fang 1 and Kwang Woo Ahn;2026;Competing risks regression for clustered data with covariate-dependent censoring;https://pubmed.ncbi.nlm.nih.gov/39790905;marginal stratified PSH;;right;Survival;Copula;yes;no;both;yes;CR
 Adatorwovor R, Latouche A and Fine JP;2026;A nonparametric dependent competing risk method for net survival analysis; https://doi.org/10.1515/ijb-2024-0035;CG;;right;Survival;Clayton, Gumbel, Frank;no;no;yes;yes;Cens
+
 
 
 
