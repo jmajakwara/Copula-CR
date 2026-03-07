@@ -80,7 +80,7 @@ Ji S, Peng L, Li R and Lynn MJ;2014;ANALYSIS OF DEPENDENTLY CENSORED DATA BASED 
 Peng M, Xiang L, Wang S;2018;Semiparametric regression analysis of clustered Survival data with semi-competing risks;https://doi.org/10.1016/j.csda.2018.02.003;semi;;right;Survival;Arch;cont;no;yes;yes;semi-CR
 Xu J, Ma J and Prvan T;2017;Non parametric hazard estimation with dependent censoring using penalized likelihood and an assumed copula;https://doi.org/10.1080/03610926.2016.1267757;non;;right;Survival;Arch;no;no;yes;yes;Cens
 Wu BH, Michimae H and Emura T;2020;Meta-analysis of individual patient data with semi-competing risks under the Weibull joint frailty-copula model;https://doi.org/10.1007/s00180-020-00977-1;par;;right;Meta-analysis;Clayton;cont;https://CRAN.R-project.org/package%3djoint.Cox;yes;yes;semi-CR
-Cheng Y and Fine JP;2012;Cumulative incidence association models for bivariate competing risks data; https://doi.org/10.1111/j.1467-9868.2011.01012.x;non;;right;Survival;Arch;no;no;yes;yes;CIF
+Cheng Y and Fine JP;2012;Cumulative incidence association models for bivariate competing risks data; https://doi.org/10.1111/j.1467-9868.2011.01012.x;non;;right;Survival;Arch;no;no;yes;yes;CR-Obs
 Li R and Peng L;2015;Quantile regression adjusting for dependent censoring from semicompeting risks;https://doi.org/10.1111/rssb.12063;par;;right;Survival;Arch;cont;no;yes;yes;semi-CR
 Wang YC, Emura T, Fan TH, Lo SMS and Wilke RA;2020;Likelihood-based inference for a frailty-copula model based on competing risks failure time data; https://doi.org/10.1002/qre.2650;par;;right;Reliability;Gumbel;no;no;yes;yes;CR
 Deng W, Ouyang F and Zhang J;2017;Semiparametric estimation method for accelerated failure time model with dependent censoring;https://doi.org/10.1080/03610918.2016.1217016;semi;;right;Survival;Arch;con;no;yes;yes;Cens
@@ -105,7 +105,7 @@ Li H and Lu Y;2019;Modeling cause-of-death mortality using hierarchical Archimed
 Cook R, Lawless J and Lee KA;2010;A copula-based mixed Poisson model for bivariate recurrent events under event-dependent censoring; https://doi.org/10.1002/sim.3830;par;;right;Survival;Clayton;cont;no;yes;yes;CR
 Barthel N, Geerdens C, Czado C and Janssen P;2019;Dependence modeling for recurrent event times subject to right-censoring with D-vine copulas;https://doi.org/10.1111/biom.13014;par;;right;Survival;D-vine;no;no;no;yes;Cens
 Rosenkranz GK;2011;Another view on the analysis of cardiovascular morbidity/mortality trials; https://doi.org/10.1002/pst.434;par;;right;Survival;Clayton;no;no;yes;yes;semi-CR
-Lin YH, Sun LH, Tseng YJ and Emura T;2022;The Pareto type I joint frailty-copula model for clustered bivariate Survival data;https://doi.org/10.1080/03610918.2022.2066694;par;;right;Survival;Clayton;cont;https://doi.org/10.1080/03610918.2022.2066694;yes;yes;All
+Lin YH, Sun LH, Tseng YJ and Emura T;2022;The Pareto type I joint frailty-copula model for clustered bivariate Survival data;https://doi.org/10.1080/03610918.2022.2066694;par;;right;Survival;Clayton;cont;https://doi.org/10.1080/03610918.2022.2066694;yes;yes;CR
 Shih JH, Lee W, Sun LH and Emura T;2019;Fitting competing risks data to bivariate Pareto models;https://doi.org/10.1080/03610926.2018.1425450;par;;right;Survival;Frank;no;no;yes;yes;CR
 Al-Essa LAA, Soliman AAA, Abd-Elmougod GAA and Alshanbari HMM;2022;Copula Approach for Dependent Competing Risks of Generalized Half-Logistic Distributions under Accelerated Censoring Data;https://doi.org/10.3390/sym15020564;par;;Type II;Reliability;Arch;cont;no;yes;yes;CR
 Dimitrova DS, Haberman S and Kaishev VK;2013;Dependent competing risks: Cause elimination and its impact on Survival;https://doi.org/10.1016/j.insmatheco.2013.07.008;non;;right;Survival;General;no;no;no;yes;CR
@@ -188,6 +188,7 @@ Hakamipour N;2025;Copula for Dependent Competing Risks Model in Progressive-Stre
 bhipsa Tripathy, Gajendra K. Vishwakarma and Atanu Bhattacharjee ;2026;Identifying candidate secondary endpoints in semi-competing risk time-to-event data using an integrated analytical framework;https://link.springer.com/article/10.1007/s00362-026-01816-z;par;;right;Survival;Frank;yes;no;both;yes;semi-CR
 Manoj Khanal 1, Soyoung Kim 1, Xi Fang 1 and Kwang Woo Ahn;2026;Competing risks regression for clustered data with covariate-dependent censoring;https://pubmed.ncbi.nlm.nih.gov/39790905;marginal stratified PSH;;right;Survival;Copula;yes;no;both;yes;CR
 Adatorwovor R, Latouche A and Fine JP;2026;A nonparametric dependent competing risk method for net survival analysis; https://doi.org/10.1515/ijb-2024-0035;CG;;right;Survival;Clayton, Gumbel, Frank;no;no;yes;yes;Cens
+
 
 
 
