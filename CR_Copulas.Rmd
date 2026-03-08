@@ -48,7 +48,7 @@ The interactive table columns have the following interpretation:
 + **Title** title of the article
 + **Truncation** type of truncation
 + **Censoring** type of censoring
-+ **Estimation** type of estimation, `ML` - Maximum likelihood, `CG` - Copula graphics, `Bayesian`, `Cox` - Cox regression or `ML` - Machine learning
++ **Estimation** type of estimation, `ML` - Maximum likelihood, `PL` - Pseudo likelihood, `CG` - Copula graphics, `Bayesian`, `Cox` - Cox regression or `ML` - Machine learning
 + **Domain** Field of study `Survival`, `Actuarial`, `Econometrics`, `Social sciences`, `Hydrology`, `Reliability`, or `Others`
 + **Copula_type** copula type, including `Arch` - if Archimidean is used in general,  `Gaus` - Gaussian, `FGM` - Farlie–Gumbel–Morgenstern,  `AMH` - Ali-Mikhail-Haq, `Symm` - Symmetric copulas
 + **Covariates** whether covariates are used or not
@@ -134,6 +134,7 @@ reactable(
 )
 ))
 ```
+
 
 
 
