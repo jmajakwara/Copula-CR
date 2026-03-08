@@ -26,7 +26,7 @@ Emura T and Michimae H;2017;A copula-based inference to piecewise exponential mo
 Zhang F, Shi Y and Wang R;2017;Geometry of the q-exponential distribution with dependent competing risks and accelerated life testing;https://doi.org/10.1016/j.physa.2016.10.069;ML;;right;Reliability;Gumbel;no;no;no;yes;CR
 Chao C and Kobayashi M;2017;A new test for single against competing risks models in duration analysis;https://doi.org/10.1080/03610926.2016.1242742;ML;;right;Econometrics;Gumbel;continuous;no;no;yes;CR
 Wu M, Shi Y and Zhang C;2017;Statistical analysis of dependent competing risks model in accelerated life testing under progressively hybrid censoring using copula function;https://doi.org/10.1080/03610918.2015.1080836;ML;;hybrid;Reliability;Gumbel;continuous;no;yes;yes;CR
-Emura T and Chen YH;2016;Gene selection for Survival data under dependent censoring: A copula-based approach;https://doi.org/10.1177/0962280214533378;par;;right;Survival;Arch;no;no;yes;yes;Cens
+Emura T and Chen YH;2016;Gene selection for Survival data under dependent censoring: A copula-based approach;https://doi.org/10.1177/0962280214533378;CG;;right;Survival;Clyaton, Frank;no;no;yes;yes;Cens
 Liu Y and Wang Q;2015;Copula-graphic estimators for the marginal Survival function with censoring indicators missing at random;https://doi.org/10.1016/j.spl.2015.08.010;non;;right;Survival;Arch;no;no;yes;yes;Cens
 Hsieh JJ and Hsiao M;2015;Quantile regression based on a weighted approach under semi-competing risks data;https://doi.org/10.1080/00949655.2014.941844;par;;right;Survival;Arch;no;no;yes;yes;semi-CR
 Noorossana R and Sabri-Laghaie K;2015;Reliability and maintenance models for a dependent competing-risk system with multiple time-scales;https://doi.org/10.1177/1748006X14565842;par;;right;Reliability;Arch & Gaus;no;no;no;yes;CR
@@ -188,6 +188,7 @@ Hakamipour N;2025;Copula for Dependent Competing Risks Model in Progressive-Stre
 bhipsa Tripathy, Gajendra K. Vishwakarma and Atanu Bhattacharjee ;2026;Identifying candidate secondary endpoints in semi-competing risk time-to-event data using an integrated analytical framework;https://link.springer.com/article/10.1007/s00362-026-01816-z;par;;right;Survival;Frank;yes;no;both;yes;semi-CR
 Manoj Khanal 1, Soyoung Kim 1, Xi Fang 1 and Kwang Woo Ahn;2026;Competing risks regression for clustered data with covariate-dependent censoring;https://pubmed.ncbi.nlm.nih.gov/39790905;marginal stratified PSH;;right;Survival;Copula;yes;no;both;yes;CR
 Adatorwovor R, Latouche A and Fine JP;2026;A nonparametric dependent competing risk method for net survival analysis; https://doi.org/10.1515/ijb-2024-0035;CG;;right;Survival;Clayton, Gumbel, Frank;no;no;yes;yes;Cens
+
 
 
 
