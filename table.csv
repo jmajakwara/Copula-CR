@@ -33,7 +33,7 @@ Noorossana R and Sabri-Laghaie K;2015;Reliability and maintenance models for a d
 van Geloven N, Geskus RB-Mol BW and Zwinderman AH;2014;Correcting for the dependent competing risk of treatment using inverse probability of censoring weighting and copulas in the estimation of natural conception chances;https://doi.org/10.1002/sim.6280;ML;;right;Survival;Plackett, Frank;cont;no;yes;no;CR
 Heuchenne C, Laurent S, Legrand C and Van Keilegom I;2013;Likelihood-Based Inference for Semi-Competing Risks;https://doi.org/10.1080/03610918.2012.725495;PL;;right;Survival;Clayton, Gumbel, Frank;no;no;yes;yes;semi-CR
 Rotolo F, Legrand C and Van Keilegom I;2013;A simulation procedure based on copulas to generate clustered multi-state Survival data;https://doi.org/10.1016/j.cmpb.2012.09.003;par;;right;Survival;Arch;no;https://ars.els-cdn.com/content/image/1-s2.0-S0169260712002180-mmc1.pdf;yes;yes;CR
-Guo C, Wang W, Guo Bo and Peng R;2013;Maintenance optimization for systems with dependent competing risks using a copula function;https://yadda.icm.edu.pl/baztech/element/bwmeta1.element.baztech-article-BAT1-0043-0055/c/httpwww_ein_org_plsitesdefaultfiles2013-01-02.pdf;par;;right;Reliability;Arch;no;no;no;yes;CR
+Guo C, Wang W, Guo Bo and Peng R;2013;Maintenance optimization for systems with dependent competing risks using a copula function;https://yadda.icm.edu.pl/baztech/element/bwmeta1.element.baztech-article-BAT1-0043-0055/c/httpwww_ein_org_plsitesdefaultfiles2013-01-02.pdf;ML;;right;Reliability;Clayton, Gumbel, Frank, t, Gaus;no;no;no;yes;CR
 Wang A;2012;On the nonidentifiability property of Archimedean copula models under dependent censoring;https://doi.org/10.1016/j.spl.2011.11.005;non;;right;Survival;Arch;no;no;no;yes;Cens
 Wang Y and Pham H;2012;Modeling the Dependent Competing Risks With Multiple Degradation Processes and Random Shock Using Time-Varying Copulas;https://ieeexplore.ieee.org/document/6045314;par;;right;Reliability;Arch;no;no;no;yes;CR
 Yanez S, Brango H, Jaramillo M and Lopera C;2011 ;Comparison between Competing Risks via the Copula-Graphic Estimator;https://www.redalyc.org/pdf/899/89922497002.pdf;non;;right;Reliability;Arch;no;no;no;yes;CR
@@ -188,6 +188,7 @@ Hakamipour N;2025;Copula for Dependent Competing Risks Model in Progressive-Stre
 bhipsa Tripathy, Gajendra K. Vishwakarma and Atanu Bhattacharjee ;2026;Identifying candidate secondary endpoints in semi-competing risk time-to-event data using an integrated analytical framework;https://link.springer.com/article/10.1007/s00362-026-01816-z;par;;right;Survival;Frank;yes;no;both;yes;semi-CR
 Manoj Khanal 1, Soyoung Kim 1, Xi Fang 1 and Kwang Woo Ahn;2026;Competing risks regression for clustered data with covariate-dependent censoring;https://pubmed.ncbi.nlm.nih.gov/39790905;marginal stratified PSH;;right;Survival;Copula;yes;no;both;yes;CR
 Adatorwovor R, Latouche A and Fine JP;2026;A nonparametric dependent competing risk method for net survival analysis; https://doi.org/10.1515/ijb-2024-0035;CG;;right;Survival;Clayton, Gumbel, Frank;no;no;yes;yes;Cens
+
 
 
 
