@@ -23,9 +23,6 @@ cols_needed <- c("event_death","follow_up_duration","ARID3A")
 print(colSums(is.na(my_data[cols_needed])))
 print(psych::describe(my_data[cols_needed]))
 
-#-------------------------
-# Survival object
-#-------------------------
 surv_object <- Surv(time = my_data$follow_up_duration,
                     event = my_data$event_death)
 
@@ -92,8 +89,8 @@ copulas <- list(
 )
 
 tau_grid <- list(
-  Clayton = c(0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9), #
-  Gumbel  = c(0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9) # c(0,0.2,0.5,0.8) 
+  Clayton = c(0,0.2,0.5,0.8), #c(0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9), 
+  Gumbel  = c(0,0.2,0.5,0.8)  #c(0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9) 
 )
 
 #-------------------------
@@ -101,15 +98,9 @@ tau_grid <- list(
 #-------------------------
 plot_CG <- function(t, d, PI, copula_fun, copula_name, tau){
 
-  #-------------------------
-  # Theta
-  #-------------------------
   theta <- tau_to_theta(copula_name, tau)
   if (is.na(theta) || is.infinite(theta)) return(NULL)
 
-  #-------------------------
-  # Clean data
-  #-------------------------
   idx <- complete.cases(t, d, PI)
   t <- t[idx]; d <- d[idx]; PI <- PI[idx]
 
@@ -160,9 +151,6 @@ plot_CG <- function(t, d, PI, copula_fun, copula_name, tau){
                group = "High")
   )
 
-  #==================================================
-  # KM 
-  #==================================================
   group <- factor(ifelse(idx_low, "Low (KM)", "High (KM)"))
 
 
@@ -221,101 +209,6 @@ for (copula_name in names(copulas)) {
 cg_results <- cg_results %>%
   distinct(Copula, Tau, .keep_all = TRUE)
 
-cat("===== CG Results =====\n")
+cat("===== CG Results ===== \n")
 print(kable(cg_results, digits=3))
 
-
-
-
-
-
-idx <- complete.cases(
-  my_data$follow_up_duration,
-  my_data$event_death,
-  my_data$ARID3A
-)
-
-data_clean <- my_data[idx, ]
-
-#==================================================
-# Cox Regression
-#==================================================
-cfit_ARID3A <- coxph(
-  Surv(follow_up_duration, event_death) ~ ARID3A,
-  data = data_clean
-)
-
-cox_sum <- summary(cfit_ARID3A)
-
-cox_tbl <- data.frame(
-  Model = "Standard Cox",
-  HR = round(exp(cox_sum$coef[1]), 4),
-  Lower95 = round(exp(cox_sum$conf.int[,"lower .95"]), 4),
-  Upper95 = round(exp(cox_sum$conf.int[,"upper .95"]), 4),
-  Pvalue = round(cox_sum$coef[,"Pr(>|z|)"], 4)
-)
-
-cat("===== Cox Regression: ARID3A =====\n")
-print(kable(cox_tbl, digits = 4))
-
-#==================================================
-# Copula-Dependent Cox
-#==================================================
-
-tau_vals <- c(0.2,0.3,0.4,0.5,0.6,0.7,0.8)
-
-Cdepend_tbl <- data.frame()
-
-for (tau in tau_vals) {
-
-  res <- tryCatch(
-    dependCox.reg(
-      data_clean$follow_up_duration,
-      data_clean$event_death,
-      data_clean$ARID3A,
-      tau,
-      var = TRUE,
-      censor.reg = TRUE,
-      baseline = TRUE
-    ),
-    error = function(e) NULL
-  )
-
-  if (!is.null(res)) {
-
-    surv_res <- res$surv.reg
-
-    # Safe extraction
-    beta <- as.numeric(surv_res["beta"])
-    se   <- as.numeric(surv_res["se"])
-
-    HR <- exp(beta)
-    lower <- exp(beta - 1.96*se)
-    upper <- exp(beta + 1.96*se)
-
-    # p-value (robust)
-    pval <- if("P" %in% names(surv_res)){
-      as.numeric(surv_res["P"])
-    } else {
-      2*(1 - pnorm(abs(beta/se)))
-    }
-
-    Cdepend_tbl <- rbind(Cdepend_tbl, data.frame(
-      Tau = tau,
-      HR = round(HR,4),
-      Lower95 = round(lower,4),
-      Upper95 = round(upper,4),
-      Pvalue = round(pval,4)
-    ))
-  }
-}
-
-cat("===== Copula-Cox HR Results (ARID3A) =====\n")
-print(kable(Cdepend_tbl, digits = 4))
-
-combined_tbl <- rbind(
-  cbind(Model="Standard Cox", cox_tbl[,-1]),
-  cbind(Model="Copula-Cox", Cdepend_tbl)
-)
-
-print(kable(combined_tbl, digits=4))
