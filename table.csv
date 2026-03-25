@@ -42,7 +42,7 @@ Huang X and Zhang N;2008;Regression Survival Analysis with an Assumed Copula for
 Kaishev VK, Dimitrova DS and Haberman S;2007;Modelling the joint distribution of competing risks Survival times using copula functions;https://doi.org/10.1016/j.insmatheco.2006.11.006;ML;;right;Actuarial;Gauss,t,Frank,Plackett;no;no;yes;no;CR
 Peng L and Fine JP;2007;Regression modeling of semicompeting risks data; https://doi.org/10.1111/j.1541-0420.2006.00621.x;ML;;right;Survival;General;cont;no;yes;yes;semi-CR
 Braekers R and Veraverbeke N;2005;A copula-graphic estimator for the conditional Survival function under dependent censoring; https://doi.org/10.1002/cjs.5540330308;CG;;right;Survival;Gumbel_morg,Frank;no;no;no;yes;Cens
-Ebrahimi N and Molefe D;2003;Survival function estimation when lifetime and censoring time are dependent;https://doi.org/10.1016/S0047-259X(03)00027-7;non;;right;Survival;Copula;no;no;yes;yes;Cens
+Ebrahimi N and Molefe D;2003;Survival function estimation when lifetime and censoring time are dependent;https://doi.org/10.1016/S0047-259X(03)00027-7;ML;;right;Survival;General;no;no;yes;yes;Cens
 Wang WJ;2003;Estimating the association parameter for copula models under dependent censoring; https://doi.org/10.1111/1467-9868.00385;non;;right;Survival;Arch;no;no;yes;yes;semi-CR
 Rivest LP and Wells MT;2001;A martingale approach to the copula-graphic estimator for the Survival function under dependent censoring; https://doi.org/10.1006/jmva.2000.1959;non;;right;Survival;Arch;no;no;no;no;Cens
 Carriere JF;1995;Removing Cancer when it is Correlated with other Causes of Death; https://doi.org/10.1002/bimj.4710370308;par;;right;Survival;Gaus;no;no;yes;no;CR
