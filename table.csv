@@ -74,7 +74,7 @@ Yeh CT, Liao GY and Emura T;2023;Sensitivity Analysis for Survival Prognostic Pr
 Bond SJ and Shaw JE;2006;Bounds on the covariate-time transformation for competing-risks Survival analysis;https://doi.org/10.1007/s10985-006-9015-z;ML;;right;Survival;General;cont;no;yes;yes;CR
 Huang CH;2019;Mixture regression models for the gap time distributions and illness-death processes;https://doi.org/10.1007/s10985-018-9418-7;ML;;right;Survival;Clayton,Frank;cont;no;yes;yes;semi-CR
 Chen YH;2012;Maximum likelihood analysis of semicompeting risks data with semiparametric regression models;https://doi.org/10.1007/s10985-011-9202-4;ML;;right;Survival;Clayton,Gumbel,Frank;cont;no;yes;yes;semi-CR
-Hsieh JJ and Chen YY;2019;Survival function estimation of current status data with dependent censoring;https://doi.org/10.1016/j.spl.2019.108621;non;;right;Survival;Arch;no;no;yes;yes;Cens
+Hsieh JJ and Chen YY;2019;Survival function estimation of current status data with dependent censoring;https://doi.org/10.1016/j.spl.2019.108621;ML;;right;Survival;Clayton,Frank;no;no;yes;yes;Cens
 Lo SMS, Mammen E and Wilke RA;2020;A nested copula duration model for competing risks with multiple spells;https://doi.org/10.1016/j.csda.2020.106986;par;;right;Duration models;Arch;cont;https://www.sciencedirect.com/topics/computer-science/supplementary-material;yes;yes;CR
 Ji S, Peng L, Li R and Lynn MJ;2014;ANALYSIS OF DEPENDENTLY CENSORED DATA BASED ON QUANTILE REGRESSION;http://dx.doi.org/10.5705/ss.2012-303;par;;right;Survival;Arch;cont;no;yes;yes;Cens
 Peng M, Xiang L, Wang S;2018;Semiparametric regression analysis of clustered Survival data with semi-competing risks;https://doi.org/10.1016/j.csda.2018.02.003;semi;;right;Survival;Arch;cont;no;yes;yes;semi-CR
