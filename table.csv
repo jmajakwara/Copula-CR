@@ -102,7 +102,7 @@ Deresa NW and Keilegom IV;2023;Copula Based Cox Proportional Hazards Models for 
 Titman AC;2014;A pool-adjacent-violators type algorithm for non-parametric estimation of current status data with dependent censoring;https://doi.org/10.1007/s10985-013-9274-4;ML;;interval;Survival;Clayton,Frank;no;no;yes;yes;Cens
 Escarela G and Carriere JF;2003;Fitting competing risks with an assumed copula;https://doi.org/10.1191/0962280203sm335ra;ML;;right;Survival;Frank;cont;no;yes;no;CR
 Li H and Lu Y;2019;Modeling cause-of-death mortality using hierarchical Archimedean copula;https://doi.org/10.1080/03461238.2018.1546224;ML;;right;Actuarial;H Arch;cont;no;yes;no;CR
-Cook R, Lawless J and Lee KA;2010;A copula-based mixed Poisson model for bivariate recurrent events under event-dependent censoring; https://doi.org/10.1002/sim.3830;par;;right;Survival;Clayton;cont;no;yes;yes;CR
+Cook R, Lawless J and Lee KA;2010;A copula-based mixed Poisson model for bivariate recurrent events under event-dependent censoring; https://doi.org/10.1002/sim.3830;ML;;right;Survival;Clayton;cont;no;yes;yes;CR
 Barthel N, Geerdens C, Czado C and Janssen P;2019;Dependence modeling for recurrent event times subject to right-censoring with D-vine copulas;https://doi.org/10.1111/biom.13014;par;;right;Survival;D-vine;no;no;no;yes;Cens
 Rosenkranz GK;2011;Another view on the analysis of cardiovascular morbidity/mortality trials; https://doi.org/10.1002/pst.434;par;;right;Survival;Clayton;no;no;yes;yes;semi-CR
 Lin YH, Sun LH, Tseng YJ and Emura T;2022;The Pareto type I joint frailty-copula model for clustered bivariate Survival data;https://doi.org/10.1080/03610918.2022.2066694;par;;right;Survival;Clayton;cont;https://doi.org/10.1080/03610918.2022.2066694;yes;yes;CR
