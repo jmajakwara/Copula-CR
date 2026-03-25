@@ -85,7 +85,7 @@ Li R and Peng L;2015;Quantile regression adjusting for dependent censoring from 
 Wang YC, Emura T, Fan TH, Lo SMS and Wilke RA;2020;Likelihood-based inference for a frailty-copula model based on competing risks failure time data; https://doi.org/10.1002/qre.2650;ML;;right;Reliability;Gumbel;no;no;yes;yes;CR
 Deng W, Ouyang F and Zhang J;2017;Semiparametric estimation method for accelerated failure time model with dependent censoring;https://doi.org/10.1080/03610918.2016.1217016;ML;;right;Survival;Clayton,Gumbel,Frank;con;no;yes;yes;Cens
 de Una Alvarez J and Veraverbeke N;2013;Generalized copula-graphic estimator;https://doi.org/10.1007/s11749-012-0314-2;GCG;;right;Survival;Clayton;no;no;yes;yes;Cens
-Abdel Ghaly AA, Aly HM and Salah RN;2021;Applying a New Multi-Dimensional Archimedean Copula on Step Stress Accelerated Life Testing with Competing Risks;https://doi.org/10.1142/S0218539321500261;par;;Type II;Reliability;Arch;cont;no;yes;yes;Cens
+Abdel Ghaly AA, Aly HM and Salah RN;2021;Applying a New Multi-Dimensional Archimedean Copula on Step Stress Accelerated Life Testing with Competing Risks;https://doi.org/10.1142/S0218539321500261;ML;;Type II;Reliability;Arch;cont;no;yes;yes;Cens
 Moradian H, Larocque D and Bellavance F;2019;Survival forests for data with dependent censoring;https://doi.org/10.1177/0962280217727314;ML;;right;Survival;Arch;cont;no;yes;yes;Cens
 Veraverbeke N;2006;Regression quantiles under dependent censoring;https://doi.org/10.1080/02331880600589304;par;;right;Survival;Arch;cont;no;no;no;Cens
 Adatorwovor R, Latouche A and Fine JP;2022;A parametric approach to relaxing the independence assumption in relative Survival analysis;https://doi.org/10.1515/ijb-2021-0016;par;;right;Survival;Arch;cont;no;yes;yes;CR
