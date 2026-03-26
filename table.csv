@@ -121,7 +121,7 @@ Fukumoto K;2015;What Happens Depends on When It Happens: Copula-Based Ordered Ev
 Volf P;2019;Statistical analysis and application of competing risks model with regression;https://doi.org/10.17535/crorr.2019.0002;ML;;right;Social;Gauss;cont;no;yes;yes;CR
 Lo S, Wilke RA and Emura T;2024;A semiparametric model for the cause-specific hazard under risk proportionality;https://doi.org/10.1016/j.csda.2024.107953;ML;;right;Social;Gumbel;cont;https://github.com/ralfawilke/PRCGE;yes;yes;CR
 Yang Q, Hong Y, Zhang N and Li J;2017;A Copula-Based Trend-Renewal Process Model for Analysis of Repairable Systems With Multitype Failures;https://doi.org/10.1109/TR.2017.2693155;ML;;right;Reliability;Clayton,Gauss;cont;no;yes;yes;CR
-Zhao XB and Zhou X;2010;Applying copula models to individual claim loss reserving methods;https://doi.org/10.1016/j.insmatheco.2009.11.001;par;right;right;Actuarial;Clayton;cont;no;no;yes;semi-CR
+Zhao XB and Zhou X;2010;Applying copula models to individual claim loss reserving methods;https://doi.org/10.1016/j.insmatheco.2009.11.001;ML;right;right;Actuarial;Clayton;cont;no;no;yes;semi-CR
 Zhou R, Zhu H, Bondy M and Ning J;2017;Analyzing semi-competing risks data with missing cause of informative terminal event; https://doi.org/10.1002/sim.7161;semi;;right;Survival;Positive stable;no;no;yes;yes;semi-CR
 Lu X, Chekouo T, Shen H and de Leon AR;2023;A two-level copula joint model for joint analysis of longitudinal and competing risks data;https://doi.org/10.1002/sim.9704;par;;right;Survival;Gauss;cont;no;yes;yes;CR
 Lo SMS and Wilke RA;2017;IDENTIFIABILITY OF THE SIGN OF COVARIATE EFFECTS IN THE COMPETING RISKS MODEL;https://doi.org/10.1017/S0266466616000372;non;;right;Survival;Arch;cont;no;yes;no;CR
