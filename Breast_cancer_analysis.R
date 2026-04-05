@@ -76,7 +76,7 @@ tau_to_theta <- function(copula_name, tau_value){
                        2*tau_value/(1 - tau_value)),
 
     "Gumbel"  = ifelse(tau_value < 0, NA,
-                       1/(1 - tau_value))
+                       tau_value/(1 - tau_value)) # due to reparameterisation of tau=alpha/(alpha+1) in the compound.Cox package
   )
 }
 
