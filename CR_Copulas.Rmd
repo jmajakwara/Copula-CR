@@ -1,5 +1,5 @@
 ---
-title: "**Overview Table of Competing Risk models using Copulas: A comprehensive review**"
+title: "Overview Table of article: **Copula-Based Models for Competing Risks: A comprehensive review**"
 output:
   html_document:
     toc: no
