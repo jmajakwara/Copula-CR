@@ -4,7 +4,7 @@ library(copula)
 library(ggplot2)
 
 # ----------------------
-# Clayton / Gumbel RW Estimator (YOUR ORIGINAL)
+# Clayton / Gumbel RW Estimator
 # ----------------------
 rw_estimator <- function(Y, delta, theta, family = c("clayton", "gumbel")) {
   family <- match.arg(family)
@@ -54,7 +54,7 @@ rw_surv <- numeric(length(event_times))
 
 
 # ----------------------
-# Data sampler (YOUR ORIGINAL)
+# Data sampler
 # ----------------------
 simulate_data <- function(n, weibull_T, weibull_C, theta, family = c("clayton", "gumbel")) {
   family <- match.arg(family)
@@ -259,7 +259,7 @@ cat("\n========================================\n")
 cat("MISSPECIFICATION: Simulate Clayton, Fit Gumbel\n")
 cat("========================================\n")
 
-# THE MISMATCH IS HERE: family_sim = "clayton", family_fit = "gumbel"
+# THE MISMATCH : family_sim = "clayton", family_fit = "gumbel"
 clayton_sim_gumbel_fit_low <- mc_misspec_analysis(runs, N, tau_values[1],
                                                   weibull_params_T, weibull_params_C,
                                                   family_sim = "clayton",
@@ -282,7 +282,7 @@ cat("\n========================================\n")
 cat("MISSPECIFICATION: Simulate Gumbel, Fit Clayton\n")
 cat("========================================\n")
 
-# THE MISMATCH IS HERE: family_sim = "gumbel", family_fit = "clayton"
+# THE MISMATCH: family_sim = "gumbel", family_fit = "clayton"
 gumbel_sim_clayton_fit_low <- mc_misspec_analysis(runs, N, tau_values[1],
                                                   weibull_params_T, weibull_params_C,
                                                   family_sim = "gumbel",
