@@ -54,7 +54,7 @@ rw_surv <- numeric(length(event_times))
 }
 
 # ----------------------
-# Reliable copula-based sampler using 'copula' package
+# Copula-based sampler using 'copula' package
 # ----------------------
 simulate_data <- function(n, weibull_T, weibull_C, theta, family = c("clayton", "gumbel")) {
   family <- match.arg(family)
@@ -78,7 +78,7 @@ simulate_data <- function(n, weibull_T, weibull_C, theta, family = c("clayton", 
 }
 
 # ----------------------
-# Single sensitivity (MSE) using corrected estimator
+# Single sensitivity (MSE) using estimator
 # ----------------------
 
 single_sensitivity_analysis <- function(n, true_theta, weibull_T, weibull_C,
@@ -152,7 +152,6 @@ single_sensitivity_analysis_tau <- function(n, true_tau, weibull_T, weibull_C,
   true_theta <- tau_to_theta(true_tau, family)
   
   if (is.null(tau_range)) {
-    # Use meaningful tau range: 0.1 to 0.9 (weak to strong dependence)
     tau_range <- seq(0.01, 0.99, by = 0.01)
   }
   
