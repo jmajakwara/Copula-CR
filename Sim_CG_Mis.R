@@ -75,9 +75,7 @@ simulate_data <- function(n, weibull_T, weibull_C, theta, family = c("clayton", 
   return(data.frame(T = T, C = C, Y = Y, delta = delta))
 }
 
-# ----------------------
-# Helper functions
-# ----------------------
+
 tau_to_theta <- function(tau, family = c("clayton", "gumbel")) {
   family <- match.arg(family)
   if (family == "clayton") {
@@ -98,7 +96,6 @@ theta_to_tau <- function(theta, family = c("clayton", "gumbel")) {
 
 # =====================================================
 # THE KEY FUNCTION WITH MISSPECIFICATION
-# =====================================================
 # NOTE: family_sim and family_fit are DIFFERENT for misspecification!
 # =====================================================
 
@@ -206,41 +203,6 @@ mc_misspec_analysis <- function(num_mc = 1000, n, true_tau,
               avg_censoring_rate = mean(censoring_rates)))
 }
 
-# ----------------------
-# Plotting function
-# ----------------------
-plot_misspec_results <- function(mc_results) {
-  df <- mc_results$avg_mse_results
-  
-  scenario_label <- paste0("Simulate: ", toupper(mc_results$family_sim),
-                           " | Fit: ", toupper(mc_results$family_fit))
-  
-  p <- ggplot(df, aes(x = tau, y = avg_mse)) +
-    geom_line(linewidth = 1.2, color = "darkgreen") +
-    geom_point(size = 2, color = "darkgreen") +
-    geom_hline(yintercept = mc_results$avg_km_mse,
-               color = "blue", linetype = "dashed", linewidth = 1) +
-    geom_vline(xintercept = mc_results$true_tau,
-               color = "red", linetype = "dashed", linewidth = 1) +
-    geom_vline(xintercept = mc_results$best_tau,
-               color = "darkgreen", linetype = "dashed", linewidth = 1) +
-    theme_minimal() +
-    labs(title = paste("MC Sensitivity Analysis - MISSPECIFICATION"),
-         subtitle = paste(scenario_label,
-                          "\nTrue tau =", round(mc_results$true_tau, 3),
-                          "| Best tau =", round(mc_results$best_tau, 3),
-                          "| KM MSE =", round(mc_results$avg_km_mse, 5),
-                          "| Min MSE =", round(mc_results$min_avg_mse, 5),
-                          "| Censoring =", round(mc_results$avg_censoring_rate * 100, 1), "%"),
-         x = "Assumed Kendall's Tau",
-         y = "Average MSE") +
-    annotate("text", x = mc_results$true_tau, y = max(df$avg_mse, na.rm = TRUE) * 0.9,
-             label = "True Tau", color = "red", hjust = -0.1, size = 3) +
-    annotate("text", x = mc_results$best_tau, y = max(df$avg_mse, na.rm = TRUE) * 0.8,
-             label = "Best Tau", color = "darkgreen", hjust = -0.1, size = 3)
-  
-  return(p)
-}
 
 # =====================================================
 # RUN MISSPECIFICATION ANALYSES
@@ -298,29 +260,6 @@ gumbel_sim_clayton_fit_high <- mc_misspec_analysis(runs, N, tau_values[3],
                                                    family_sim = "gumbel",
                                                    family_fit = "clayton")
 
-# =====================================================
-# SAVE PLOTS
-# =====================================================
-
-pdf(file="misspec_clayton_sim_gumbel_fit_low_200.pdf")
-print(plot_misspec_results(clayton_sim_gumbel_fit_low))
-dev.off()
-pdf(file="misspec_clayton_sim_gumbel_fit_med_200.pdf")
-print(plot_misspec_results(clayton_sim_gumbel_fit_med))
-dev.off()
-pdf(file="misspec_clayton_sim_gumbel_fit_high_200.pdf")
-print(plot_misspec_results(clayton_sim_gumbel_fit_high))
-dev.off()
-
-pdf(file="misspec_gumbel_sim_clayton_fit_low_200.pdf")
-print(plot_misspec_results(gumbel_sim_clayton_fit_low))
-dev.off()
-pdf(file="misspec_gumbel_sim_clayton_fit_med_200.pdf")
-print(plot_misspec_results(gumbel_sim_clayton_fit_med))
-dev.off()
-pdf(file="misspec_gumbel_sim_clayton_fit_high_200.pdf")
-print(plot_misspec_results(gumbel_sim_clayton_fit_high))
-dev.off()
 
 # =====================================================
 # SUMMARY OUTPUT
