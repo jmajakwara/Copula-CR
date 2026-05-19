@@ -78,47 +78,7 @@ simulate_data <- function(n, weibull_T, weibull_C, theta, family = c("clayton", 
 }
 
 # ----------------------
-# Single sensitivity (MSE) using estimator
-# ----------------------
 
-single_sensitivity_analysis <- function(n, true_theta, weibull_T, weibull_C,
-                                        theta_range = NULL,
-                                        family = c("clayton", "gumbel")) {
-  family <- match.arg(family)
-  if (is.null(theta_range)) {
-    if (family == "clayton") theta_range <- seq(0.1, 10, length.out = 20)
-    if (family == "gumbel") theta_range <- seq(1.1, 10, length.out = 20)
-  }
-  
-  sim_df <- simulate_data(n, weibull_T, weibull_C, true_theta, family)
-  
-# sorted unique times
-time_grid <- sort(unique(sim_df$Y))
-  true_surv <- pweibull(time_grid, shape = weibull_T$shape,
-                        scale = weibull_T$scale, lower.tail = FALSE)
-  
-  mse_results <- data.frame(theta = theta_range, mse = NA_real_)
-  
-  for (i in seq_along(theta_range)) {
-    theta_test <- theta_range[i]
-    # compute RW with test theta and the same family
-    rw_fit <- tryCatch(
-      rw_estimator(sim_df$Y, sim_df$delta, theta = theta_test, family = family),
-      error = function(e) return(NULL)
-    )
-    if (is.null(rw_fit) || nrow(rw_fit) == 0) {
-      mse_results$mse[i] <- NA_real_
-      next
-    }
-    # linear interpolation (survival defined for times not in event grid)
-    rw_surv_interp <- approx(rw_fit$time, rw_fit$surv, xout = time_grid,
-                             yleft = 1, yright = tail(rw_fit$surv, 1))$y
-    mse_results$mse[i] <- mean((rw_surv_interp - true_surv)^2, na.rm = TRUE)
-  }
-  
-  return(list(mse_results = mse_results,
-              censoring_rate = 1 - mean(sim_df$delta)))
-}
 
 
 theta_to_tau <- function(theta, family = c("clayton", "gumbel")) {
@@ -139,65 +99,7 @@ tau_to_theta <- function(tau, family = c("clayton", "gumbel")) {
   }
 }
 
-# ----------------------
-# Kendall's Tau-based Sensitivity Analysis
-# ----------------------
 
-single_sensitivity_analysis_tau <- function(n, true_tau, weibull_T, weibull_C,
-                                           tau_range = NULL,
-                                           family = c("clayton", "gumbel")) {
-  family <- match.arg(family)
-  
-  # Convert true tau to theta for data generation
-  true_theta <- tau_to_theta(true_tau, family)
-  
-  if (is.null(tau_range)) {
-    tau_range <- seq(0.01, 0.99, by = 0.01)
-  }
-  
-  sim_df <- simulate_data(n, weibull_T, weibull_C, true_theta, family)
-  
-  # sorted unique times
-  time_grid <- sort(unique(sim_df$Y))
-
-  true_surv <- pweibull(time_grid, shape = weibull_T$shape,
-                        scale = weibull_T$scale, lower.tail = FALSE)
-  
-  mse_results <- data.frame(tau = tau_range, mse = NA_real_)
-
-
-  for (i in seq_along(tau_range)) {
-    tau_test <- tau_range[i]
-    # Convert test tau to theta for RW estimation
-    theta_test <- tau_to_theta(tau_test, family)
-    
-    # compute RW with test theta
-    rw_fit <- tryCatch(
-      rw_estimator(sim_df$Y, sim_df$delta, theta = theta_test, family = family),
-      error = function(e) return(NULL)
-    )
-    if (is.null(rw_fit) || nrow(rw_fit) == 0) {
-      mse_results$mse[i] <- NA_real_
-      next
-    }
-    
-    rw_surv_interp <- approx(rw_fit$time, rw_fit$surv, xout = time_grid,
-                             yleft = 1, yright = tail(rw_fit$surv, 1))$y
-    mse_results$mse[i] <- mean((rw_surv_interp - true_surv)^2, na.rm = TRUE)
-  }
-
- # Calculate KM MSE for baseline comparison
-  km_fit <- survfit(Surv(Y, delta) ~ 1, data = sim_df)
-  km_surv_interp <- approx(km_fit$time, km_fit$surv, xout = time_grid,
-                          yleft = 1, yright = tail(km_fit$surv, 1))$y
-  km_mse <- mean((km_surv_interp - true_surv)^2, na.rm = TRUE)
-  
-  return(list(mse_results = mse_results,
-	      km_mse = km_mse,
-              censoring_rate = 1 - mean(sim_df$delta),
-              true_tau = true_tau,
-              true_theta = true_theta))
-}
 
 # ----------------------
 # Kendall's Tau MC Sensitivity Analysis
@@ -246,94 +148,15 @@ mc_sensitivity_analysis_tau <- function(num_mc = 1000, n, true_tau,
               avg_censoring_rate = mean(censoring_rates)))
 }
 
-# ----------------------
-# Kendall's Tau Plotting
-# ----------------------
 
-plot_sensitivity_results_tau <- function(mc_results) {
-  df <- mc_results$avg_mse_results
-  p <- ggplot(df, aes(x = tau, y = avg_mse)) +
-    geom_line(linewidth = 1.2) +
-    geom_point(size = 2) +
-    geom_vline(xintercept = mc_results$true_tau,
-               color = "red", linetype = "dashed", linewidth = 1) +
-    geom_vline(xintercept = mc_results$best_tau,
-               color = "darkgreen", linetype = "dashed", linewidth = 1) +
-    theme_minimal() +
-    labs(title = paste("MC Sensitivity Analysis -", toupper(mc_results$copula_family), "Copula"),
-         subtitle = paste("True tau =", round(mc_results$true_tau, 3), 
-                          "(theta =", round(mc_results$true_theta, 3), ")",
-                          "| Best tau =", round(mc_results$best_tau, 3),
-                          "| Avg Censoring =", round(mc_results$avg_censoring_rate * 100, 1), "%"),
-         x = "Kendall's Tau",
-         y = "Average MSE") +
-    annotate("text", x = mc_results$true_tau, y = max(df$avg_mse, na.rm = TRUE) * 0.9,
-             label = "True Tau", color = "red", hjust = -0.1, size = 3) +
-    annotate("text", x = mc_results$best_tau, y = max(df$avg_mse, na.rm = TRUE) * 0.8,
-             label = "Best Tau", color = "darkgreen", hjust = -0.1, size = 3)
-  return(p)
-}
 
-# ----------------------
-# Comparison curves 
-# ----------------------
-
-plot_comparison_curves <- function(n, tau, weibull_T, weibull_C, family = c("clayton", "gumbel")) {
-  family <- match.arg(family)
-  
-  # Convert tau to theta for data generation and RW estimation
-  theta <- tau_to_theta(tau, family)
-  
-  # Simulate data
-  set.seed(2025)
-  sim_df <- simulate_data(n, weibull_T, weibull_C, theta, family)
-  
-  # Kaplan-Meier estimator
-  km_fit <- survfit(Surv(Y, delta) ~ 1, data = sim_df)
-  
-  # Rivest-Wells estimator with converted theta
-  rw_fit_df <- rw_estimator(sim_df$Y, sim_df$delta, theta = theta, family = family)
-  
-  # True survival curve
-  time_grid <- sort(unique(sim_df$Y))
-  true_surv <- pweibull(time_grid, shape = weibull_T$shape,
-                        scale = weibull_T$scale, lower.tail = FALSE)
-  
-  # Create comparison data frame
-  km_df <- data.frame(time = km_fit$time, surv = km_fit$surv, method = "Kaplan-Meier")
-  rw_df <- data.frame(time = rw_fit_df$time, surv = rw_fit_df$surv, method = "Rivest-Wells")
-  true_df <- data.frame(time = time_grid, surv = true_surv, method = "True Survival")
-  
-  plot_df <- rbind(km_df, rw_df, true_df)
-  
-  censoring_rate <- 1 - mean(sim_df$delta)
-  
-  p <- ggplot(plot_df, aes(x = time, y = surv, color = method, linetype = method)) +
-    geom_line(linewidth = 1.2) +
-    theme_minimal() +
-    labs(title = paste("Survival Curve Comparison -", toupper(family), "Copula"),
-         subtitle = paste("Tau =", tau, "(Theta =", round(theta, 2), ")", 
-                          "| Censoring =", round(censoring_rate * 100, 1), "%"),
-         x = "Time",
-         y = "Survival Probability",
-         color = "Method",
-         linetype = "Method") +
-    scale_color_manual(values = c("True Survival" = "black",
-                                  "Kaplan-Meier" = "blue",
-                                  "Rivest-Wells" = "darkgreen")) +
-    scale_linetype_manual(values = c("True Survival" = "solid",
-                                     "Kaplan-Meier" = "dashed",
-                                     "Rivest-Wells" = "dotted")) +
-    theme(legend.position = "bottom")
-  
-  return(p)
-}
 
 # ----------------------
 # Run Kendall's Tau Sensitivity Analysis
 # ----------------------
 
 # Define parameters
+set.sedd(2025)
 N <- 500
 weibull_params_T <- list(shape = 1.5, scale = 1)
 weibull_params_C <- list(shape = 1.2, scale = 1)
@@ -371,33 +194,7 @@ gumbel_tau_high <- mc_sensitivity_analysis_tau(runs, N, tau_values[3],
                                               weibull_params_T, weibull_params_C, 
                                               family = "gumbel")
 
-# Plot results
-pdf(file="clayton_low_500.pdf")
-print(plot_sensitivity_results_tau(clayton_tau_low))
-dev.off()
-pdf(file="clayton_med_500.pdf")
-print(plot_sensitivity_results_tau(clayton_tau_med))
-dev.off()
-pdf(file="clayton_high_500.pdf")
-print(plot_sensitivity_results_tau(clayton_tau_high))
-dev.off()
-pdf(file="gumbel_low_500.pdf")
-print(plot_sensitivity_results_tau(gumbel_tau_low))
-dev.off()
-pdf(file="gumbel_med_500.pdf")
-print(plot_sensitivity_results_tau(gumbel_tau_med))
-dev.off()
-pdf(file="gumbel_high_500.pdf")
-print(plot_sensitivity_results_tau(gumbel_tau_high))
-dev.off()
 
-# Plot comparison curves for selected scenarios (single run examples)
-pdf(file="clayton_500.pdf")
-print(plot_comparison_curves(N, 0.8, weibull_params_T, weibull_params_C, "clayton"))
-dev.off()
-pdf(file="gumbel_500.pdf")
-print(plot_comparison_curves(N, 0.8, weibull_params_T, weibull_params_C, "gumbel"))
-dev.off()
 
 cat("\n=== CLAYTON COPULA MC SENSITIVITY ANALYSIS SUMMARY ===\n")
 cat("Number of MC runs per scenario:", runs, "\n")
