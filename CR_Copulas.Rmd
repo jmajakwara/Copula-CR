@@ -108,7 +108,7 @@ reactable(
     censoring = colDef(name = "Censoring"),
     model = colDef(name = "Estimation", minWidth = 70),
     field = colDef(name = "Domain", minWidth = 65),
-    type = colDef(name = "Copula_ype"),
+    type = colDef(name = "Copula_type"),
     type_covariates = colDef(name = "Covariates", show = FALSE, cell = function(value) {
     if (value == "no") "\u274c no" else "\u2714\ufe0f yes"}),
     code = colDef(name = "Code",cell = function(value, index) {
